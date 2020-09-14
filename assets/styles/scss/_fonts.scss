@@ -1,0 +1,25 @@
+$FontPath: "../fonts/whitney/";
+
+@font-face {
+  font-family: Whitney Book;
+  src: url("#{$FontPath}/Whitney-Book.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Whitney Light;
+  src: url("#{$FontPath}/Whitney-Light.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Whitney Semi;
+  src: url("#{$FontPath}/whitney-semibold.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Whitney Bold;
+  src: url("#{$FontPath}/whitney-bold.otf") format("opentype");
+  font-style: normal;
+}

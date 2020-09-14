@@ -29,9 +29,9 @@ const SOURCE = {
 
 		// Pick the components you need in your project
 // 		FOUNDATION + '/dist/js/plugins/foundation.abide.js',
-		FOUNDATION + '/dist/js/plugins/foundation.accordion.js',
-// 		FOUNDATION + '/dist/js/plugins/foundation.accordionMenu.js',
-// 		FOUNDATION + '/dist/js/plugins/foundation.drilldown.js',
+// 		FOUNDATION + '/dist/js/plugins/foundation.accordion.js',
+		FOUNDATION + '/dist/js/plugins/foundation.accordionMenu.js',
+		FOUNDATION + '/dist/js/plugins/foundation.drilldown.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.dropdown.js',
 		FOUNDATION + '/dist/js/plugins/foundation.dropdownMenu.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.equalizer.js',

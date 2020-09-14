@@ -44,9 +44,59 @@
 			<div class="off-canvas-content" data-off-canvas-content>
 				
 				<header class="header" role="banner">
+						
+					<?php
+						$imgID = get_field('banner_background_image');
+						$imgSize = "full";
+						$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
+					
+					?>
+							
+					<div class="bg" style="background-image: url(<?php echo $imgArr[0]; ?> );"></div>
 							
 					 <!-- This navs will be applied to the topbar, above all content 
 						  To see additional nav styles, visit the /parts directory -->
-					 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+					<div class="grid-container">
+						<div class="grid-x grid-padding-x">
+							<div class="inner cell small-12">
+								<?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+							</div>
+						</div>
+					</div>
+
+					<div class="banner">
+												
+						<div class="grid-container">
+							<div class="grid-x grid-padding-x">
+							
+								<div class="inner cell small-12">
+									
+									<h1>
+										<span><?php the_field('banner_heading_light_weight_font');?></span>
+										<?php the_field('banner_heading_bold_weight_font');?>
+									</h1>
+									
+									<?php if($copy = get_field('banner_copy')):?>
+									<p class="remove-break"><?php echo $copy;?></p>
+									<?php endif;?>
+									
+									<?php 
+									$link = get_field('banner_link');
+									if( $link ): 
+									    $link_url = $link['url'];
+									    $link_title = $link['title'];
+									    $link_target = $link['target'] ? $link['target'] : '_self';
+									    ?>
+									    <a class="view-more-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									<?php endif; ?>
+									
+								</div>
+								
+							</div>
+						</div>
+		
+					</div>
+					 
 	 	
 				</header> <!-- end .header -->
+				

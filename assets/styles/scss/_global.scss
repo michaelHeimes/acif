@@ -3,6 +3,158 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
+/*********************
+MIXINS
+*********************/
+
+@mixin bg-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+/*********************
+CUSTOM GLOBAL STYLES
+*********************/
+h3 {
+	line-height: 1.5;
+}
+
+small {
+	font-size: 14px;
+	line-height: 1.35;
+}
+
+.fw-img {
+	max-width: none;
+	width: 100%;
+}
+
+section.utility {
+padding-top: 6.25em;
+padding-bottom: 6.25em;
+
+	&:last-of-type {
+    	padding-bottom: 0;
+	}
+}
+
+a.view-more-link {
+	font-family: Whitney Semi;
+	font-size: rem-calc(18);
+	letter-spacing: 0;
+	color: $black;
+	display: inline-block;
+	padding-right: 40px;
+	position: relative;
+	
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $primary-color;
+	}
+	
+}
+
+iframe {
+	border: 0;
+}
+
+.ui-widget,
+.ui-widget input {
+	font-family: $body-font;
+}
+
+.ui-accordion {
+	background: transparent;
+	
+	.ui-accordion-header,
+	&.ui-state-active {
+		border: 0;
+		border-radius: 0;
+		background-color: #EBEBEB;
+		color: $black;
+	}
+	
+	.ui-accordion-header {
+		font-size: rem-calc(20px);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		position: relative;
+		margin: 0 0 2px;
+		padding: 0.62em 2em 0.62em 1.05em;
+		
+		.ui-icon {
+			width: 26px;
+			height: 18px;
+			position: absolute;
+			right: 0.4em;
+			top: 50%;
+			background-image: url('/wp-content/themes/acif/assets/images/dropdown-down.svg');
+			background-size: contain;
+		    background-position: center;
+		    transform: rotateX(0deg) translateY(0%);
+		    transition: transform 0.4s ease;
+		}
+		
+	&.ui-state-active {
+		.ui-icon {
+			transform: rotateX(180deg) translateY(20%);
+		}
+	}
+		
+	}
+	
+	.ui-accordion-content {
+		padding: 0;
+		border: 0;
+	}
+	
+}
+
+.remove-break {
+	@media screen and (max-width: 767px) {
+		br {
+			display: none;
+		}
+	}
+}
+
+h2.has-pipe,
+.title.has-pipe {
+	position: relative;
+	padding-bottom: 0.54em;
+	
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		display: inline-block;
+		width: 100%;
+		height: 7px;
+		background-color: $primary-color;
+		
+		@include breakpoint(medium) {
+			height: 13px;
+		}
+		
+	}
+}
+
+.title.has-pipe {
+	padding-bottom: 1.54em;
+	margin-bottom: 1em;
+}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -407,13 +559,6 @@ SIDEBARS & ASIDES
 	ul {
 		margin: 0;
 	}
-}
-/*********************
-FOOTER STYLES
-*********************/
-.footer {
-	clear: both;
-	margin-top: 1em;
 }
 	
 /*********************

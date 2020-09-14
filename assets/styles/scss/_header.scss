@@ -1,0 +1,163 @@
+ul#offcanvas-nav {
+	padding-top: 2em;
+	li {
+		a {
+			text-transform: uppercase;
+			position: relative;
+			color: $black;
+		}
+		
+		&.is-accordion-submenu-parent {
+			
+			>a:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 0.975em;
+				left: auto;
+				margin-top: -3px;
+				border: 0;
+			    height: 8px;
+			    width: 12px;
+				background-image: url('/wp-content/themes/acif/assets/images/parent-link-down.svg');
+				background-size: contain;
+			    background-position: center;
+			    background-repeat: no-repeat;
+			}
+		}
+		
+	}
+}
+
+header.header {
+	position: relative;
+	height: 929px;
+	
+	.bg {
+		@include bg-img;
+	}	
+	
+	.top-bar {
+		padding-top: 2.57em;
+		
+		a[data-toggle="off-canvas"] {
+			width: 30px;
+			height: 31px;
+			position: relative;
+			
+			span {
+				position: absolute;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 3px;
+				background: $white;
+				
+				&:nth-child(1) {
+					top: 4px;
+				}
+
+				&:nth-child(2) {
+					top: 14px;
+				}
+				
+				&:nth-child(3) {
+					bottom: 4px;
+				}				
+				
+			}
+			
+		}
+	
+		.top-bar-left {
+			max-width: calc(100% - 40px);
+			
+			@include breakpoint(nav-break) {
+				max-width: 100%;
+			}
+			
+			ul {
+				li {
+					a {
+						font-family: $heading-font;
+					    color: $white;
+					    font-size: rem-calc(22);
+					    padding: 0;
+					}
+				}
+			}
+		}
+	
+		.top-bar-right {
+			ul#main-nav {
+				li {
+					margin-left: 0.75em;
+					
+				&.is-dropdown-submenu-parent>a:after {
+					right: 0;
+					border: 0;
+				    height: 8px;
+				    width: 12px;
+					background-image: url('/wp-content/themes/acif/assets/images/parent-link-down.svg');
+					background-size: contain;
+				    background-position: center;
+				    background-repeat: no-repeat;
+				}
+				
+					a {
+						text-transform: uppercase;
+						font-size: rem-calc(13);
+						color: $white;
+						padding: 0.2rem;
+					}
+				
+				&.menu-item-has-children {
+					a {
+						padding-right: 1.4em;
+					}
+				}
+				
+					ul.menu.submenu.is-dropdown-submenu {
+					    padding: 1em 0;
+					}
+				
+				}
+			}
+		}
+		
+	}
+	
+	.banner {
+		position: relative;
+		padding-top: 8.75em;
+		
+		h1 {
+			text-transform: uppercase;
+			color: $white;
+			font-size: rem-calc(42);
+			line-height: .89;
+			margin: 0;
+			padding-bottom: 0.32em;
+			
+			@include breakpoint(medium) {
+				font-size: rem-calc(65);
+			}
+			
+			span {
+				display: block;
+				font-size: rem-calc(32);
+				font-family: Whitney Light;
+				line-height: 1;
+				
+			@include breakpoint(medium) {
+				font-size: rem-calc(48);
+			}
+				
+			}
+			
+		}
+				
+	}
+	
+}

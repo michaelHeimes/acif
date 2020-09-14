@@ -1,0 +1,277 @@
+.page-template-page-home {
+	
+	.disclaimer {
+		small {
+			display: inline-block;
+			padding: 1.7em;
+		}
+	}
+	
+	#about {
+		padding-top: 6.15em;
+		padding-bottom: 4.75em;
+	}
+	
+	#fund-facts {
+		position: relative;
+		padding-top: 5.45em;
+		padding-bottom: 6.25em;
+		
+		.bg {
+			@include bg-img;
+		}
+		
+		.grid-container {
+			position: relative;
+		}
+		
+		h3 {
+			color: $primary-color;
+			padding-top: 2.3em;
+		}
+		
+		ul {
+			list-style: none;
+			padding: 0.05em 0 0 0.6em;
+			margin: 0;
+			
+			li {
+				position: relative;
+				line-height: 1.4;
+				
+			&:before {
+				content: '•';
+				position: absolute;
+				left: -0.6em;
+			}
+				
+			}
+			
+		}
+		
+		strong {
+			font-family: $heading-font;
+		}
+		
+		.bottom {
+		    
+		    &.right {
+				p {
+					margin: 0;
+				}
+			}
+		    
+		}
+		
+		small {
+			display: inline-block;
+			padding-top: 3em;
+		}
+						
+	}
+
+	#distributions-performance {
+		padding-top: 5em;
+		
+		.share-select-dropdown-wrap {
+			padding-bottom: 4.5em;
+			text-transform: uppercase;
+			color: $primary-color;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			font-family: $heading-font;
+			
+			> span {
+				font-family: $body-font;
+				display: inline-block;
+			}
+			
+			.select-box {
+				display: flex;
+				align-items: center;
+				
+				img {
+					margin-left: 0.35em;
+				}
+				
+			}
+			
+			.share-select-dropdown {
+				display: none;
+				color: $black;
+				border: 1px solid #EBEBEB;
+			    position: absolute;
+			    left: 50%;
+			    top: calc(100% + 10px);
+			    transform: translate(-50%, 0%);
+			    background: white;
+			    z-index: 100;
+			    padding: .5em 1.5em 1.5em;
+			    width: 285px;
+			    
+			    .option {
+				    cursor: pointer;
+				    position: relative;
+				    padding: 0.5em;
+				    
+				    &:after {
+					    content: '';
+					    position: absolute;
+					    left: 1em;
+					    right: 1em;
+					    height: 3px;
+					    bottom: 0;
+					    background-color: $primary-color;
+				    }
+				    
+			    }
+			    
+    		}
+    		
+		}
+		
+		.result {
+			margin-bottom: 2.8em;
+			
+    		.header {
+	    		max-width: 190px;
+				margin: auto;
+    		}
+    		
+    		.frame-wrap {
+	    		iframe {
+		    		height: 170px;
+	    		}
+    		}
+    		
+		}
+		
+		.disclosure {
+			padding: 0 1.7em 1.7em;
+		}
+		
+		#funds-accordion {
+			
+			#performance {
+				#performance-frame {
+					height: 920px;
+					
+					iframe {
+						height: 890px;
+					}
+					
+				}
+			}
+			
+			#historical-nav {
+				.start-date,
+				.end-date {
+				    z-index: 50;
+				    display: inline-block;
+				    font-size: rem-calc(38);
+				    line-height: 1.05;
+				    text-align: center;
+				    position: relative;
+				    margin-top: 40px;
+				    margin-bottom: 30px;
+				    font-style: italic;
+				    
+				    input {
+					    font-style: normal;
+					    color: $primary-color;
+					    text-transform: uppercase;
+					    font-size: 20px;
+					    margin-left: 10px;
+					    display: inline-block;
+					    cursor: pointer;
+					    letter-spacing: 1.9px;
+					    border: 0px;
+					    outline: none;
+					    background: transparent;
+					    background-image: url('/wp-content/themes/acif/assets/images/dropdown-down.svg');
+					    background-size: 18px 9px;
+					    background-repeat: no-repeat;
+					    background-position: center right;
+					    width: 150px;
+				    }
+				    
+				}
+				
+				.end-date {
+				    margin-left: 50px;
+				}
+
+				#historical-nav-frame {
+					height: 450px;
+					
+					iframe {
+					    height: 400px;
+					}
+					
+				}
+			}
+			
+				
+		}
+		
+			
+	}
+	
+	
+	#holdings {
+		padding-top: 6em;
+		padding-bottom: 4.5em;
+		background-color: #F5F5F5;
+		
+		.left {
+			padding-bottom: 2em;
+			.copy-wrap {
+				padding-top: 1.1em;
+			}
+		}
+		
+		.right {
+			.frame-wrap {
+				height: 500px;
+				overflow: hidden;
+				
+				iframe {
+					height: 500px;
+				}
+				
+			}
+		}
+		
+		.accordion {
+			padding-top: 4.1em;
+		}
+			
+	}
+	
+	
+	#materials-documents {
+		padding-top: 7.65em;
+		padding-bottom: 28.85em;
+		position: relative;
+		
+		.bg {
+			@include bg-img;
+			top: 20em;
+		}
+		
+		.grid-container {
+			position: relative;
+		}
+		
+		.left {
+			padding-bottom: 2em;
+			
+			img {
+				max-width: 244px;
+			}
+		}
+		
+	}
+	
+}

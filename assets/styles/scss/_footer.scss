@@ -1,0 +1,56 @@
+#contact {
+	padding-top: 5.1em;
+    padding-bottom: 5.5em;
+	background-color: $black;
+	color: $white;
+	
+	h2,
+	a {
+		color: $white;
+	}
+	
+	h2 {
+		&:after {
+			@include breakpoint(tablet) {
+			width: 79.226%;
+			}
+		}
+	}
+	
+	.left {
+		margin-bottom: 2em;
+	}
+	
+	.right {
+		div:first-child {
+			font-family: $heading-font;
+		}
+	}
+
+}
+
+#disclaimer {
+	background-color: #505050;
+	color: $white;
+	padding-top: 4.15em;
+    padding-bottom: 2.9em;
+}
+
+footer.footer {
+	border-top: 1px solid $white;
+	line-height: 0.8;
+	background-color: #323232;
+	color: $white;
+	padding-top: 2.95em;
+	padding-bottom: 2.95em;
+	
+	.copyright {
+		font-family: $heading-font;
+	}
+	
+	a {
+		color: $white;	
+	}
+	
+	
+}
