@@ -4,7 +4,7 @@ ul#offcanvas-nav {
 		a {
 			text-transform: uppercase;
 			position: relative;
-			color: $black;
+			color: $black;			
 		}
 		
 		&.is-accordion-submenu-parent {
@@ -24,6 +24,7 @@ ul#offcanvas-nav {
 				background-size: contain;
 			    background-position: center;
 			    background-repeat: no-repeat;
+			    transition: background-image 0.4s ease 0.3s;
 			}
 		}
 		
@@ -32,42 +33,71 @@ ul#offcanvas-nav {
 
 header.header {
 	position: relative;
-	height: 929px;
+	height: 100vh;
 	
 	.bg {
 		@include bg-img;
 	}	
 	
-	.top-bar {
-		padding-top: 2.57em;
+	.sticky-nav {
+		position: fixed;
+		z-index: 99999;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-color: transparent;
+		transform: translateY(1.57em);
+		transition: transform 0.4s ease 0.3s, background-color 0.4s ease;
 		
-		a[data-toggle="off-canvas"] {
-			width: 30px;
-			height: 31px;
-			position: relative;
+	&.dark-bg {
+		transform: translateY(0);
+		background-color: $black;
+		transition: transform 0.4s ease, background-color 0.4s ease 0.3s;
+		
+		.top-bar-right ul#main-nav>li.is-dropdown-submenu-parent>a:after {
+			background-image: url('/wp-content/themes/acif/assets/images/parent-link-down-white.svg');
+			transition: background-image 0.4s ease 0.4s;
+		}
+		
+		ul.menu.submenu.is-dropdown-submenu {
+			background-color: $black;
+		}
+		
+	}
+	
+		.top-bar {
+			padding-top: 1em;
+			padding-bottom: 1em;
 			
-			span {
-				position: absolute;
-				left: 0;
-				right: 0;
-				width: 100%;
-				height: 3px;
-				background: $white;
+			a[data-toggle="off-canvas"] {
+				width: 30px;
+				height: 31px;
+				position: relative;
 				
-				&:nth-child(1) {
-					top: 4px;
+				span {
+					position: absolute;
+					left: 0;
+					right: 0;
+					width: 100%;
+					height: 3px;
+					background: $white;
+					
+					&:nth-child(1) {
+						top: 4px;
+					}
+	
+					&:nth-child(2) {
+						top: 14px;
+					}
+					
+					&:nth-child(3) {
+						bottom: 4px;
+					}				
+					
 				}
-
-				&:nth-child(2) {
-					top: 14px;
-				}
-				
-				&:nth-child(3) {
-					bottom: 4px;
-				}				
 				
 			}
-			
+		
 		}
 	
 		.top-bar-left {
@@ -84,6 +114,13 @@ header.header {
 					    color: $white;
 					    font-size: rem-calc(22);
 					    padding: 0;
+					    
+						@media screen and (min-width: 440px) {
+							br {
+								display: none;
+							}
+						}
+					    
 					}
 				}
 			}
@@ -91,7 +128,8 @@ header.header {
 	
 		.top-bar-right {
 			ul#main-nav {
-				li {
+				> li {
+					position: relative;
 					margin-left: 0.75em;
 					
 				&.is-dropdown-submenu-parent>a:after {
@@ -105,6 +143,16 @@ header.header {
 				    background-repeat: no-repeat;
 				}
 				
+				&.active:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: .2rem;
+					right: .2rem;
+					height: 2px;
+					background-color: $primary-color;
+				}
+				
 					a {
 						text-transform: uppercase;
 						font-size: rem-calc(13);
@@ -113,13 +161,42 @@ header.header {
 					}
 				
 				&.menu-item-has-children {
-					a {
+					> a {
 						padding-right: 1.4em;
 					}
 				}
 				
 					ul.menu.submenu.is-dropdown-submenu {
-					    padding: 1em 0;
+						padding: .5em 1em;
+					    text-align: right;
+					    min-width: 0;
+					    width: 170px;
+					    transition: background-color 0.4s ease;
+					    
+					    li {
+						    
+						    a {
+							    padding: .7em 0;
+								font-family: $heading-font;
+								text-transform: none;
+							}
+							
+						&:not(:last-child) {
+							position: relative;
+							
+						&:after {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							height: 2px;
+							background-color: $primary-color;
+						}
+								
+						}
+							
+						}
 					}
 				
 				}

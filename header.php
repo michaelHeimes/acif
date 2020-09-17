@@ -56,10 +56,13 @@
 							
 					 <!-- This navs will be applied to the topbar, above all content 
 						  To see additional nav styles, visit the /parts directory -->
-					<div class="grid-container">
-						<div class="grid-x grid-padding-x">
-							<div class="inner cell small-12">
-								<?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+					
+					<div class="sticky-nav">
+						<div class="grid-container">
+							<div class="grid-x grid-padding-x">
+								<div class="inner cell small-12">
+									<?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+								</div>
 							</div>
 						</div>
 					</div>

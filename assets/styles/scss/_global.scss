@@ -37,7 +37,15 @@ small {
 
 section.utility {
 padding-top: 6.25em;
-padding-bottom: 6.25em;
+padding-bottom: 0;
+
+@include breakpoint(medium) {
+	padding-bottom: 6.25em;
+}
+
+	.left {
+		padding-bottom: 0.9em;
+	}
 
 	&:last-of-type {
     	padding-bottom: 0;
@@ -152,8 +160,13 @@ h2.has-pipe,
 }
 
 .title.has-pipe {
-	padding-bottom: 1.54em;
+	padding-bottom: 1em;
 	margin-bottom: 1em;
+	
+	@include breakpoint(medium) {
+		padding-bottom: 1.54em;
+	}
+	
 }
 
 /*********************

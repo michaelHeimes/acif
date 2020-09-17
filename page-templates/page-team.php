@@ -21,7 +21,8 @@ get_header(); ?>
 			    <?php endwhile; endif; ?>		
 			    
 			    
-			    <?php if( have_rows('team_members') ):?>		    
+			    <?php if( have_rows('team_members') ):?>	
+			    <div id="team"></div>	    
 			    	<?php while ( have_rows('team_members') ) : the_row();?>	
 				    <section class="team-member utility">
 					    <div class="grid-container">

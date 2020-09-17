@@ -1,24 +1,10 @@
-/*
-Scripts to run BEFORE Foundation
-*/
-jQuery(document).ready(function($) {	
-	
-// 	Add smoothScroll to links with hashes
-	$('li a[href*="#"]').attr('data-smooth-scroll','').attr('data-animation-easing','swing').attr('data-offset','-24');
-	
 // 	Init Foundation
-	$(document).foundation();
-		
-});
-
-
+	jQuery(document).foundation();	
 
 /*
 These functions make sure WordPress
 and Foundation play nice together.
 */
-
-jQuery(document).ready(function() {
 	
 	// Remove empty P tags created by WP inside of Accordion and Orbit
 	jQuery('.accordion p:empty, .orbit p:empty').remove();
@@ -31,13 +17,79 @@ jQuery(document).ready(function() {
 		  jQuery(this).wrap("<div class='responsive-embed'/>");
 		}
 	});
-}); 
-
 
 /*
 Custom Functions
 */
-jQuery(document).ready(function($) {
+
+jQuery(document).ready(function($) {	
+	
+// 	Add smoothScroll to links with hashes
+// 	$('a[href*="#"]').attr('data-smooth-scroll','').attr('data-animation-easing','swing').attr('data-offset','-24');
+
+// 	$('.banner a.view-more-link').attr('data-smooth-scroll','').attr('data-animation-easing','swing').attr('data-offset','-24');
+
+
+
+// Smooth Scroll Anchor Links
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  	.not('[href="#"]')
+	  	.not('[href="#0"]')
+	  	.click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top - 62
+	        }, 800, function() {
+
+	          var $target = $(target);
+
+	        });
+	      }
+	    }
+	});
+		
+
+// 	Remove active class from main nav anchor links
+	var menu_items_links = $("#main-nav li a");
+	menu_items_links.each(function () {
+		if ($(this).is('[href*="#"]')) {
+			$(this).parent().removeClass('active');
+			$(this).click(function () {
+				var current_index = $(this).parent().index(),
+					parent_element = $(this).closest('ul');
+				parent_element.find('li').not(':eq(' + current_index + ')').removeClass('active');
+				$(this).parent().addClass('active');
+			})
+		}
+	});
+
+
+
+	
+// 	Sticky NAV BG change
+	$(window).scroll(function() {    
+	    var scroll = $(window).scrollTop();
+	
+	    if (scroll >= 10) {
+	        $(".sticky-nav").addClass("dark-bg");
+	    } else {
+	        $(".sticky-nav").removeClass("dark-bg");
+	    }
+	});
+
 
 // 	Shares Dropdown Filter
     $('.share-select-dropdown div').click(function() {

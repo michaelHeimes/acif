@@ -21,7 +21,8 @@ get_header(); ?>
 			    <?php endwhile; endif; ?>		
 			    
 			    
-			    <?php if( have_rows('literature_categories') ):?>		    
+			    <?php if( have_rows('literature_categories') ):?>	
+			    <div id="materials"></div>	    
 			    	<?php while ( have_rows('literature_categories') ) : the_row();?>	
 				    <section class="category-row utility">
 					    <div class="grid-container">
@@ -36,6 +37,9 @@ get_header(); ?>
 	
 						    <div class="right cell small-12 medium-6 tablet-offset-1">
 							    <div class="inner grid-x grid-padding-x">
+								    
+								    <?php $doc_icon = get_sub_field('will_the_documents_have_an_icon');?>
+								    
 								    
 								    <?php if( have_rows('documents') ):?>
 								    	<?php while ( have_rows('documents') ) : the_row();?>	
@@ -58,10 +62,18 @@ get_header(); ?>
 										    <a class="single-file cell small-6 medium-5 medium-offset-1" href="<?php echo esc_attr($url); ?>" title="<?php echo esc_attr($title); ?>">
 											    <div class="grid-x align-middle">
 											        <?php
-													$image = get_field('pdf_icon_image', 'option');
-													if( !empty( $image ) ): ?>
-													    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+
+												      
+												    if( $doc_icon && in_array('yes', $doc_icon) ):?>
+												        
+												        <?php
+														$image = get_field('pdf_icon_image', 'option');
+														if( !empty( $image ) ): ?>
+														    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+														<?php endif;?>
+														
 													<?php endif;?>
+														
 											        <span><?php echo esc_html($title); ?></span>
 											    </div>
 										    </a>

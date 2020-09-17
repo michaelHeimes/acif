@@ -9,7 +9,7 @@
 <div class="top-bar" id="top-bar-menu">
 	<div class="top-bar-left float-left">
 		<ul class="menu">
-			<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
+			<li><a href="<?php echo home_url(); ?>"><?php the_field('header_logo_text', 'option'); ?></a></li>
 		</ul>
 	</div>
 	<div class="top-bar-right show-for-nav-break">

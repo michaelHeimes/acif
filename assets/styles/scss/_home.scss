@@ -10,6 +10,11 @@
 	#about {
 		padding-top: 6.15em;
 		padding-bottom: 4.75em;
+		
+		.left {
+			padding-bottom: 0.9em;
+		}
+		
 	}
 	
 	#fund-facts {
@@ -155,10 +160,10 @@
 			
 			#performance {
 				#performance-frame {
-					height: 920px;
+					height: 780px;
 					
 					iframe {
-						height: 890px;
+						height: 780px;
 					}
 					
 				}
@@ -251,13 +256,22 @@
 	
 	
 	#materials-documents {
-		padding-top: 7.65em;
+		padding-top: 5.65em;
 		padding-bottom: 28.85em;
 		position: relative;
 		
+		@include breakpoint(medium) {
+			padding-top: 7.65em;
+			padding-bottom: 28.85em;			
+		}
+		
 		.bg {
 			@include bg-img;
-			top: 20em;
+			top: 27em;
+			
+			@include breakpoint(medium) {
+				top: 20em;
+			}
 		}
 		
 		.grid-container {
