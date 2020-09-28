@@ -1,7 +1,7 @@
 .page-template-page-home {
 	
 	.disclaimer {
-		small {
+		.small-text-wrap {
 			display: inline-block;
 			padding: 1.7em;
 		}
@@ -153,23 +153,43 @@
 		}
 		
 		.disclosure {
-			padding: 0 1.7em 1.7em;
+			padding: 0 0em 1.7em;
+			
+			@include breakpoint(medium) {
+				padding: 0 1.7em 1.7em;
+			}
+			
 		}
 		
 		#funds-accordion {
 			
 			#performance {
 				#performance-frame {
-					height: 780px;
+					height: 2000px;
+					
+					@media screen and (min-width: 633px) {
+						height: 680px;
+					}
 					
 					iframe {
-						height: 780px;
+						height: 2000px;
+					
+						@media screen and (min-width: 633px) {
+							height: 680px;
+						}
+						
 					}
 					
 				}
 			}
 			
 			#historical-nav {
+// 				height: 700px !important;
+				
+				@media screen and (min-width: 586px) {
+					height: 600px !important;
+				}
+				
 				.start-date,
 				.end-date {
 				    z-index: 50;
@@ -179,8 +199,12 @@
 				    text-align: center;
 				    position: relative;
 				    margin-top: 40px;
-				    margin-bottom: 30px;
+				    margin-bottom: 0px;
 				    font-style: italic;
+				    
+				    @include breakpoint(medium) {
+					    margin-bottom: 30px;
+				    }
 				    
 				    input {
 					    font-style: normal;
@@ -203,20 +227,40 @@
 				    
 				}
 				
+				.start-date {
+					margin-right: 20px;
+					@include breakpoint(medium) {
+						margin-right: 0;
+					}
+				}
+				
 				.end-date {
-				    margin-left: 50px;
+					@include breakpoint(medium) {
+				    	margin-left: 50px;
+				    }
 				}
 
 				#historical-nav-frame {
-					height: 450px;
+					height: 400px;
 					
 					iframe {
-					    height: 400px;
+					    height: 422px;
 					}
 					
 				}
 			}
 			
+			#distribution {
+								
+				#distribution-frame {
+					height: 1000px;
+					
+					iframe {
+						height: 1000px;	
+					}
+					
+				}
+			}
 				
 		}
 		
@@ -242,7 +286,7 @@
 				overflow: hidden;
 				
 				iframe {
-					height: 500px;
+					height: 500px;					
 				}
 				
 			}
@@ -250,6 +294,55 @@
 		
 		.accordion {
 			padding-top: 4.1em;
+			
+			#holdings-frame {
+				height: 6600px;
+				
+				@media screen and (min-width: 533px) {
+					height: 10600px;
+				}
+				
+				@media screen and (min-width: 768px) {
+					height: 10400px;
+				}
+				
+				@media screen and (min-width: 783px) {
+					height: 8000px;
+				}
+				
+				@media screen and (min-width: 916px) {
+					height: 5400px;
+				}
+				
+				@media screen and (min-width: 1099px) {
+					height: 5250px;
+				}
+				
+				iframe {
+					height: 6600px;
+					
+					@media screen and (min-width: 533px) {
+						height: 10600px;
+					}
+					
+					@media screen and (min-width: 768px) {
+						height: 10400px;
+					}
+					
+					@media screen and (min-width: 783px) {
+						height: 8000px;
+					}
+					
+					@media screen and (min-width: 916px) {
+						height: 5400px;
+					}
+					
+					@media screen and (min-width: 1099px) {
+						height: 5250px;
+					}
+					
+				}
+			}
 		}
 			
 	}

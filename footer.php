@@ -23,7 +23,7 @@
 								<div><?php bloginfo('name'); ?></div>
 								<div><?php the_field('address', 'option');?></div>
 								<div>F: <?php the_field('fax_number', 'option');?></div>
-								<div><a href="tel:<?php the_field('phone_number', 'option');?>">P: <?php the_field('contact_heading', 'option');?></a></div>
+								<div><a href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option'));?>">P: <?php the_field('phone_number', 'option');?></a></div>
 								<div><a href="mailto:<?php the_field('email_1', 'option');?>">E: <?php the_field('email_1', 'option');?></a></div>
 								<div><a href="mailto:<?php the_field('email_2', 'option');?>">E: <?php the_field('email_1', 'option');?></a></div>
 							</div>
@@ -36,9 +36,9 @@
 					<div class="grid-container">
 						<div class="grid-x grid-padding-x">
 							<div class="cell small-12">	
-								<small>				
+								<div class="small-text-wrap">				
 									<?php the_field('footer_disclaimer', 'option');?>
-								</small>
+								</div>
 							</div>
 						</div>
 					</div>

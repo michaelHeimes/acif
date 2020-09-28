@@ -35,50 +35,53 @@ get_header(); ?>
 						    	<h2 class="remove-break has-pipe"><?php the_sub_field('heading');?></h2>
 						    </div>
 	
-						    <div class="right cell small-12 medium-6 tablet-offset-1">
+						    <div class="right cell small-12">
 							    <div class="inner grid-x grid-padding-x">
 								    
 								    <?php $doc_icon = get_sub_field('will_the_documents_have_an_icon');?>
 								    
-								    
 								    <?php if( have_rows('documents') ):?>
 								    	<?php while ( have_rows('documents') ) : the_row();?>	
 								    	
+								    	<?php if( have_rows('single_document') ):?>
+								    		<?php while ( have_rows('single_document') ) : the_row();?>	
 								    	
-								    	<?php
-										$file = get_sub_field('single_document');
-										if( $file ):
-										
-										
-										    // Extract variables.
-										    $url = $file['url'];
-										    $title = $file['title'];
-										    $caption = $file['caption'];
-										    $icon = $file['icon'];
-										    $id = $file['id'];
-	
-										    ?>
-										    
-										    <a class="single-file cell small-6 medium-5 medium-offset-1" href="<?php echo esc_attr($url); ?>" title="<?php echo esc_attr($title); ?>">
-											    <div class="grid-x align-middle">
-											        <?php
+										    	<?php
+												$file = get_sub_field('document_file');
+												if( $file ):
+												
+												
+												    // Extract variables.
+												    $url = $file['url'];
+												    $title = $file['title'];
+												    $caption = $file['caption'];
+												    $icon = $file['icon'];
+												    $id = $file['id'];
+			
+												    ?>
+												    
+												    <a class="single-file cell small-6 medium-4 <?php if( $doc_icon && in_array('yes', $doc_icon) ):?><?php else:?>no-icon<?php endif;?>" href="<?php echo esc_attr($url); ?>" title="<?php echo esc_attr($title); ?>">
+													    <div class="grid-x align-middle">
+													        <?php
+														      
+														    if( $doc_icon && in_array('yes', $doc_icon) ):?>
+														        
+														        <?php
+																$image = get_sub_field('icon');
+																if( !empty( $image ) ): ?>
+																    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+																<?php endif;?>
+																
+															<?php endif;?>
+																
+													        <span><?php echo esc_html($title); ?></span>
+													    </div>
+												    </a>
+												
+												<?php endif; ?>
 
-												      
-												    if( $doc_icon && in_array('yes', $doc_icon) ):?>
-												        
-												        <?php
-														$image = get_field('pdf_icon_image', 'option');
-														if( !empty( $image ) ): ?>
-														    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-														<?php endif;?>
-														
-													<?php endif;?>
-														
-											        <span><?php echo esc_html($title); ?></span>
-											    </div>
-										    </a>
-										
-										<?php endif; ?>
+									    	<?php endwhile;?>
+									    <?php endif;?>
 								    
 								    	<?php endwhile;?>
 								    <?php endif;?>
