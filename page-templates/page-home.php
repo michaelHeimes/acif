@@ -199,7 +199,7 @@ get_header(); ?>
 										<div class="start-date">Select <input value="Start Date" type="text"></div>
 										<div class="end-date">Select <input value="End Date" type="text"></div>
 								
-										<div id="historical-nav-frame" style="-webkit-overflow-scrolling:touch; overflow: auto; ">
+										<div id="historical-nav-frame">
 											<iframe style="position:relative;width:100%; border:0px; " src="https://marketing.alpsinc.com/resourcerealestate/historical-nav/RCIAX/"></iframe>
 												
 										</div>

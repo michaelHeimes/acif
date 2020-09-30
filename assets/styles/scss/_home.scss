@@ -187,7 +187,7 @@
 // 				height: 700px !important;
 				
 				@media screen and (min-width: 586px) {
-					height: 600px !important;
+					height: 630px !important;
 				}
 				
 				.start-date,
@@ -241,10 +241,19 @@
 				}
 
 				#historical-nav-frame {
-					height: 400px;
+					height: 430px;
+					
+					@include breakpoint(medium) {
+						height: 400px;
+					}
 					
 					iframe {
-					    height: 422px;
+					    height: 430px;
+					    
+					    @include breakpoint(medium) {
+						    height: 460px;
+					    }
+					    
 					}
 					
 				}
@@ -296,26 +305,26 @@
 			padding-top: 4.1em;
 			
 			#holdings-frame {
-				height: 6600px;
+				height: 6700px;
 				
 				@media screen and (min-width: 533px) {
-					height: 10600px;
+					height: 10700px;
 				}
 				
 				@media screen and (min-width: 768px) {
-					height: 10400px;
+					height: 10600px;
 				}
 				
 				@media screen and (min-width: 783px) {
-					height: 8000px;
+					height: 8100px;
 				}
 				
 				@media screen and (min-width: 916px) {
-					height: 5400px;
+					height: 5500px;
 				}
 				
 				@media screen and (min-width: 1099px) {
-					height: 5250px;
+					height: 5300px;
 				}
 				
 				iframe {
