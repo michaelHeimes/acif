@@ -9,6 +9,10 @@
 		.single-file {
 			margin-bottom: 1.55em;
 			
+			.grid-x {
+				flex-wrap: nowrap;
+			}
+			
 			img {
 				margin-right: 0.95em;
 				margin-bottom: 0.5em;

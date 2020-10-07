@@ -25,6 +25,11 @@ h3 {
 	line-height: 1.5;
 }
 
+b,
+strong {
+	font-family: $header-font-family;
+}
+
 small,
 .small-text-wrap {
 	font-size: 14px;
