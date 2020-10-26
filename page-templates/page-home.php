@@ -132,7 +132,7 @@ get_header(); ?>
 									</div>
 									
 									<div class="frame-wrap text-center">
-										<iframe scrolling="yes" horizontalscrolling="no" verticalscrolling="yes" id="daily-fund" src="https://marketing.alpsinc.com/resourcerealestate/funddistribution-daily/RCIAX"></iframe>
+										<iframe scrolling="yes" horizontalscrolling="no" verticalscrolling="yes" id="daily-fund" src="https://resourcerealestate.alpsinc.com/funddistribution-daily/RCIAX"></iframe>
 									</div>
 									
 								</div>
@@ -146,7 +146,7 @@ get_header(); ?>
 									</div>
 									
 									<div class="frame-wrap">
-										<iframe scrolling="yes" horizontalscrolling="no" verticalscrolling="yes" id="quarterly-fund" src="https://marketing.alpsinc.com/resourcerealestate/funddistribution-quarterly/RCIAX"></iframe>
+										<iframe scrolling="yes" horizontalscrolling="no" verticalscrolling="yes" id="quarterly-fund" src="https://resourcerealestate.alpsinc.com/funddistribution-quarterly/RCIAX"></iframe>
 									</div>
 									
 								</div>
@@ -160,7 +160,7 @@ get_header(); ?>
 									</div>	
 									
 									<div class="frame-wrap">
-										<iframe scrolling="yes" horizontalscrolling="no" verticalscrolling="yes" id="daily-nav" src="https://marketing.alpsinc.com/resourcerealestate/nav-daily/RCIAX"></iframe>
+										<iframe scrolling="yes" horizontalscrolling="no" verticalscrolling="yes" id="daily-nav" src="https://resourcerealestate.alpsinc.com/nav-daily/RCIAX"></iframe>
 									</div>
 								
 								</div>
@@ -177,7 +177,7 @@ get_header(); ?>
 									<div id="performance" class="performance-table">
 												
 										<div id="performance-frame" style="position:relative; overflow: hidden;">
-											<iframe scrolling="yes" style="width:100%; border: 0;" src="https://marketing.alpsinc.com/resourcerealestate/performance/"></iframe>
+											<iframe scrolling="yes" style="width:100%; border: 0;" src="https://resourcerealestate.alpsinc.com/performance/"></iframe>
 										</div>
 								
 										<div class="disclosure">
@@ -200,7 +200,7 @@ get_header(); ?>
 										<div class="end-date">Select <input value="End Date" type="text"></div>
 								
 										<div id="historical-nav-frame">
-											<iframe style="position:relative;width:100%; border:0px; " src="https://marketing.alpsinc.com/resourcerealestate/historical-nav/RCIAX/"></iframe>
+											<iframe style="position:relative;width:100%; border:0px; " src="https://resourcerealestate.alpsinc.com/historical-nav/RCIAX/"></iframe>
 												
 										</div>
 								
@@ -221,7 +221,7 @@ get_header(); ?>
 									<div id="distribution" class="performance-table">
 
 										<div id="distribution-frame">
-											<iframe src="https://marketing.alpsinc.com/resourcerealestate/dividend/RCIAX" style="border:0px; width:100%;"></iframe>
+											<iframe src="https://resourcerealestate.alpsinc.com/dividend/RCIAX" style="border:0px; width:100%;"></iframe>
 										</div>
 																			
 										<div class="disclosure">
@@ -262,6 +262,41 @@ get_header(); ?>
 						    
 						    <div class="left cell small-12 medium-6 tablet-5">
 						    	<h2 class="remove-break has-pipe"><?php the_field('holdings_heading');?></h2>
+
+							</div>
+
+						    <div class="right cell small-12 medium-6 tablet-offset-1">
+							    <div class="copy-wrap">
+							    	<?php the_field('holdings_copy');?>
+							    </div>
+						    </div>  
+				
+				    
+						    <div class="accordion cell small-12">
+							    <h3><?php the_field('holdings_accordion_label');?></h3>
+							    <div id="holdings-frame" class="holdings-table">
+								    <iframe src="https://resourcerealestate.alpsinc.com/holdings-full/RCIAX" style="width:100%; border:0px;"></iframe>
+							    </div>
+						    </div>
+						    
+						    <div class="disclaimer cell small-12">
+							    <small>
+							    	<?php the_field('holdings_disclaimer');?>
+							    </small>
+						    </div>
+				    
+					    </div>
+				    </div>
+			    </section>
+
+
+<!--
+			    <section id="holdings">
+				    <div class="grid-container">
+					    <div class="grid-x grid-padding-x">  
+						    
+						    <div class="left cell small-12 medium-6 tablet-5">
+						    	<h2 class="remove-break has-pipe"><?php the_field('holdings_heading');?></h2>
 							    <div class="copy-wrap">
 							    	<?php the_field('holdings_copy');?>
 							    </div>
@@ -290,7 +325,8 @@ get_header(); ?>
 					    </div>
 				    </div>
 			    </section>
-
+-->
+			    
 			    			 
 			    <section id="materials-documents">
 					<?php

@@ -97,17 +97,17 @@ jQuery(document).ready(function($) {
 
 		var initialclass = $('.share-select-dropdown div:first-child()').data("shareclass");
 
-        var quarterly = "https://marketing.alpsinc.com/resourcerealestate/funddistribution-quarterly/" + initialclass;
-        var daily = "https://marketing.alpsinc.com/resourcerealestate/funddistribution-daily/" + initialclass;
-        var nav = "https://marketing.alpsinc.com/resourcerealestate/nav-daily/" + initialclass;
+        var quarterly = "https://resourcerealestate.alpsinc.com/funddistribution-quarterly/" + initialclass;
+        var daily = "https://resourcerealestate.alpsinc.com/funddistribution-daily/" + initialclass;
+        var nav = "https://resourcerealestate.alpsinc.com/nav-daily/" + initialclass;
         
         $('#daily-nav').attr("src", nav);
         $('#quarterly-fund').attr("src", quarterly);
         $('#daily-fund').attr("src", daily);
         
-        var performance = "https://marketing.alpsinc.com/resourcerealestate/performance/" + initialclass;
-        var nav = "https://marketing.alpsinc.com/resourcerealestate/historical-nav/" + initialclass;
-        var dist = "https://marketing.alpsinc.com/resourcerealestate/dividend/" + initialclass;
+        var performance = "https://resourcerealestate.alpsinc.com/performance/" + initialclass;
+        var nav = "https://resourcerealestate.alpsinc.com/historical-nav/" + initialclass;
+        var dist = "https://resourcerealestate.alpsinc.com/dividend/" + initialclass;
 
         $('#performance-frame iframe').attr("src", performance);
         $('#historical-nav-frame iframe').attr("src", nav);
@@ -121,9 +121,9 @@ jQuery(document).ready(function($) {
         var shareclass = $(this).data("shareclass");
         performanceShareClass = shareclass;
 
-        var quarterly = "https://marketing.alpsinc.com/resourcerealestate/funddistribution-quarterly/" + shareclass;
-        var daily = "https://marketing.alpsinc.com/resourcerealestate/funddistribution-daily/" + shareclass;
-        var nav = "https://marketing.alpsinc.com/resourcerealestate/nav-daily/" + shareclass;
+        var quarterly = "https://resourcerealestate.alpsinc.com/funddistribution-quarterly/" + shareclass;
+        var daily = "https://resourcerealestate.alpsinc.com/funddistribution-daily/" + shareclass;
+        var nav = "https://resourcerealestate.alpsinc.com/nav-daily/" + shareclass;
             
         // var topten = "https://marketing.alpsinc.com/cssecure.alpsinc.com/resourcerealestate/holdings-daily/" + shareclass;
         $('#daily-nav').attr("src", nav);
@@ -131,9 +131,9 @@ jQuery(document).ready(function($) {
         $('#daily-fund').attr("src", daily);
 
 
-        var performance = "https://marketing.alpsinc.com/resourcerealestate/performance/" + shareclass;
-        var nav = "https://marketing.alpsinc.com/resourcerealestate/historical-nav/" + shareclass;
-        var dist = "https://marketing.alpsinc.com/resourcerealestate/dividend/" + shareclass;
+        var performance = "https://resourcerealestate.alpsinc.com/performance/" + shareclass;
+        var nav = "https://resourcerealestate.alpsinc.com/historical-nav/" + shareclass;
+        var dist = "https://resourcerealestate.alpsinc.com/dividend/" + shareclass;
 
         $('#performance-frame iframe').attr("src", performance);
         $('#historical-nav-frame iframe').attr("src", nav);

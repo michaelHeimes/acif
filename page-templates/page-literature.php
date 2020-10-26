@@ -47,38 +47,46 @@ get_header(); ?>
 								    		<?php while ( have_rows('single_document') ) : the_row();?>	
 								    	
 										    	<?php
-												$file = get_sub_field('document_file');
-												if( $file ):
-												
-												
-												    // Extract variables.
-												    $url = $file['url'];
-												    $title = $file['title'];
-												    $caption = $file['caption'];
-												    $icon = $file['icon'];
-												    $id = $file['id'];
-			
-												    ?>
+												$file = get_sub_field('document_file');																							
+											    $url = $file['url'];
+											    $title = $file['title'];
+											    $caption = $file['caption'];
+											    $icon = $file['icon'];
+											    $id = $file['id'];
+		
+		
+											    ?>
+											    
+									  
 												    
-												    <a class="single-file cell small-6 medium-4 <?php if( $doc_icon && in_array('yes', $doc_icon) ):?><?php else:?>no-icon<?php endif;?>" href="<?php echo esc_attr($url); ?>" title="<?php echo esc_attr($title); ?>">
-													    <div class="grid-x align-middle">
+											    <a class="single-file cell small-6 medium-4 <?php if( $doc_icon && in_array('yes', $doc_icon) ):?><?php else:?>no-icon<?php endif;?>" href="<?php if( get_sub_field('what_will_this_link_to') == 'outbound' ): the_sub_field('link_url'); else: echo esc_attr($url); endif; ?>" title="<?php if( get_sub_field('what_will_this_link_to') == 'outbound' ): the_sub_field('title'); else: echo esc_attr($title); endif;?>" <?php if( get_sub_field('what_will_this_link_to') == 'outbound' ):?> target="_blank"<?php endif;?>>
+												    
+												    <div class="grid-x align-middle">
+												        <?php
+													      
+													    if( $doc_icon && in_array('yes', $doc_icon) ):?>
+													        
 													        <?php
-														      
-														    if( $doc_icon && in_array('yes', $doc_icon) ):?>
-														        
-														        <?php
-																$image = get_sub_field('icon');
-																if( !empty( $image ) ): ?>
-																    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-																<?php endif;?>
-																
+															$image = get_sub_field('icon');
+															if( !empty( $image ) ): ?>
+															    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 															<?php endif;?>
-																
-													        <span><?php echo esc_html($title); ?></span>
-													    </div>
-												    </a>
-												
-												<?php endif; ?>
+															
+														<?php endif;?>
+															
+												        <span>
+													        <?php if( get_sub_field('what_will_this_link_to') == 'outbound' ):
+														        the_sub_field('title');
+														        else:
+													        echo esc_html($title); 
+													        endif;?>
+													        
+													    </span>
+												    
+												    </div>
+												    
+											    </a>
+											
 
 									    	<?php endwhile;?>
 									    <?php endif;?>

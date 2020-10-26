@@ -7,7 +7,7 @@
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */			
  ?>
-					
+ 			<?php if(!is_page_template('page-templates/page-coming-soon.php')):?>					
 				<section id="contact">
 					<div class="grid-container">
 						<div class="grid-x grid-padding-x">
@@ -25,7 +25,6 @@
 								<div>F: <?php the_field('fax_number', 'option');?></div>
 								<div><a href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option'));?>">P: <?php the_field('phone_number', 'option');?></a></div>
 								<div><a href="mailto:<?php the_field('email_1', 'option');?>">E: <?php the_field('email_1', 'option');?></a></div>
-								<div><a href="mailto:<?php the_field('email_2', 'option');?>">E: <?php the_field('email_1', 'option');?></a></div>
 							</div>
 						
 						</div>
@@ -57,6 +56,8 @@
 					</div> <!-- end #inner-footer -->
 				
 				</footer> <!-- end .footer -->
+				
+			<?php endif;?>
 			
 			</div>  <!-- end .off-canvas-content -->
 					

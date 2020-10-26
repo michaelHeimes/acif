@@ -80,7 +80,7 @@
 				
 				<header class="header" role="banner">
 					
-					<?php if(is_404()):?>
+					<?php if(is_404() || is_page_template('page-templates/page-coming-soon.php')):?>
 					
 					<?php
 						$imgID = get_field('404_background_image', 'option');
@@ -132,7 +132,12 @@
 										<p class="remove-break"><?php echo $copy;?></p>
 										<?php endif;?>
 										
-										<a class="view-more-link" href="<?php echo home_url(); ?>">Return Home</a>									
+										<a class="view-more-link" href="<?php echo home_url(); ?>">Return Home</a>		
+										
+									<?php elseif (is_page_template('page-templates/page-coming-soon.php')):?>
+									
+										<h1>Coming Soon</h1>
+																	
 									<?php else:?>
 									
 										<h1>
